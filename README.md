@@ -273,16 +273,22 @@ On the PC(i5-9600K CPU @ 3.70GHz 32Gb ram), the Vivado flow (synthesis → imple
 <img width="1669" height="613" alt="image" src="https://github.com/user-attachments/assets/3d600f9d-e49d-4bbb-9ff5-7d3e15af430d" />
 
 -Per-step runtimes (implementation + bitstream)
+
 link_design: elapsed 00:00:28 (cpu 00:00:27)
 <img width="791" height="86" alt="image" src="https://github.com/user-attachments/assets/da54d858-c9f0-4c63-a4f1-ec9f532584c4" />
+
 opt_design: elapsed 00:00:15 (cpu 00:00:18)
 <img width="1164" height="58" alt="image" src="https://github.com/user-attachments/assets/b26b6c5b-ed69-483e-b1b9-246d6384c453" />
+
 place_design: elapsed 00:02:08 (cpu 00:03:02)
 <img width="842" height="48" alt="image" src="https://github.com/user-attachments/assets/fc2e2436-5992-4517-904e-a3c91df1f01d" />
+
 phys_opt_design: elapsed 00:00:07 (cpu 00:00:13)
 <img width="807" height="48" alt="image" src="https://github.com/user-attachments/assets/0686fc5e-739c-4da0-8326-8cd0f0def3bb" />
+
 route_design: elapsed 00:02:36 (cpu 00:03:46)
 <img width="1180" height="78" alt="image" src="https://github.com/user-attachments/assets/d83b1bb6-99b6-45bd-9263-5cc09af3e6c2" />
+
 write_bitstream: elapsed 00:00:32 (cpu 00:00:55)
 <img width="828" height="60" alt="image" src="https://github.com/user-attachments/assets/5229d883-c1b7-4f11-bb2b-edd98680364d" />
 
