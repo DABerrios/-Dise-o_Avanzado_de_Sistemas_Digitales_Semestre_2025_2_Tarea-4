@@ -33,6 +33,12 @@ RTL/
   display_interface.sv
   rx_control.sv
   wide_mem.sv
+  data_sync.v
+  pulse_generator.sv
+  uart_basic.v
+  uart_basic_tick_gen.v
+  uart_rx.v
+  uart_tx.v
   UART_master_const.xdc
   ila_0/
     ila_0.xci
