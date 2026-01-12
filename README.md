@@ -27,12 +27,10 @@ Communication with the host PC is via **UART**. Results are shown both:
 │   ├── golde_gen.py           
 │   ├── golden_inputs.csv      
 │   └── golden_ref.csv         
-│
 ├── Matlab/                    
 │   ├── coprocessorTesting.m   
 │   ├── write2dev.m          
 │   └── command2dev.m         
-│
 ├── RTL/                       
 │   ├── coprocessor_top.sv     
 │   ├── control_out.sv         
