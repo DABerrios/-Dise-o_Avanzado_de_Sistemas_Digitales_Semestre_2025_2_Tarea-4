@@ -74,9 +74,7 @@ typedef enum logic [3:0] {
         endcase
     end
 
-    // ----------------------------------------------------------------
-    // 2. SEQUENTIAL LOGIC (Datapath & State Transitions)
-    // ----------------------------------------------------------------
+
     always @(posedge clk) begin
         if (reset) begin
             state      <= IDLE;
