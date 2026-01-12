@@ -114,11 +114,11 @@ Pragmas are applied in `HLS/core.cpp` in the top-level `proc_core` and the per-o
 - `#pragma HLS INTERFACE ap_none port=opcode`  
 - `#pragma HLS INTERFACE ap_none port=A`  
 - `#pragma HLS INTERFACE ap_none port=B`  
-  Keeps the boundary as direct wires (no AXI/stream protocol), so the RTL shell can capture outputs immediately when `ap_done` asserts (excluding UART overhead as required by the assignment).
+  Keeps the boundary as direct wires , so the RTL shell can capture outputs immediately when `ap_done` asserts .
 
 ---
 
-## 4) Evidence: dot-product DSE (small table)
+## 4) Evidence: dot-product DSE
 
 The following dot-product configurations were tested with Euclidean fixed at `U_euc = 128`:
 
@@ -132,7 +132,7 @@ The following dot-product configurations were tested with Euclidean fixed at `U_
 
 ---
 
-## 5) Regenerating the HLS RTL/IP (required for review)
+## 5) Regenerating the HLS RTL/IP 
 
 Reviewers will regenerate the processing core RTL from the HLS sources in `HLS/`.
 Only the top-level HLS files are needed: `core.cpp`, `core.hpp`.
@@ -144,7 +144,7 @@ Only the top-level HLS files are needed: `core.cpp`, `core.hpp`.
    - **Part:** `xc7a100tcsg324-1`
 3. Add sources:
    - `HLS/core.cpp`, `HLS/core.hpp`
-4. Add testbench (optional but recommended):
+4. Add testbench :
    - `HLS/testbench.cpp`, `HLS/golden_inputs.csv`, `HLS/golden_ref.csv`
 5. Run:
    - C simulation (optional)
@@ -153,7 +153,7 @@ Only the top-level HLS files are needed: `core.cpp`, `core.hpp`.
 
 ---
 
-## 6) Vivado implementation (RTL shell)
+## 6) Vivado implementation 
 
 The RTL shell in `RTL/` integrates:
 - UART RX/TX interface
@@ -162,7 +162,7 @@ The RTL shell in `RTL/` integrates:
 - output FSM (captures result and serializes 6 bytes)
 - display interface (fixed-point visualization)
 
-### How to rebuild locally (Vivado)
+### How to rebuild locally 
 1. Create a new Vivado project for **xc7a100tcsg324-1** (Nexys4 DDR).
 2. Add all RTL sources from `RTL/`.
 3. Add constraints: `RTL/UART_master_const.xdc`.
@@ -179,7 +179,7 @@ An ILA instance is included in the repository (`RTL/ila_0/`) but is left comment
 
 ---
 
-## 7) Operating frequency report (timing closure)
+## 7) Operating frequency report 
 
 Target system clock: **100 MHz** (10.0 ns period).
 
@@ -198,7 +198,7 @@ This demonstrates timing closure at the required operating frequency.
 
 ---
 
-## 8) Latency and throughput metrics (how obtained)
+## 8) Latency and throughput metrics (
 
 ### Latency definition
 Processing-core latency only, measured from:
@@ -219,7 +219,7 @@ Latency was measured with ILA using the sample indices of `ap_start` and `ap_don
 | Euclidean | 420 | 42  | 42 (`554 - 512`) |
 | Dot       | 240 | 24  | 24 (`536 - 512`) |
 
-### Throughput (core transaction throughput, excluding UART)
+### Throughput 
 Throughput is computed as:
 
 `Throughput = f_core / cycles_per_transaction`
@@ -230,7 +230,7 @@ At `f_core = 100 MHz`:
 
 ---
 
-## 9) Resource usage (final)
+## 9) Resource usage 
 
 Final integrated system (post-implementation):
 - LUT: **24918**
@@ -262,7 +262,7 @@ The script also demonstrates that results are observable both on the PC (UART re
 
 ---
 
-## 11) Vivado build time (observed)
+## 11) Vivado build time 
 
 On the PC(i5-9600K CPU @ 3.70GHz 32Gb ram), the Vivado flow (synthesis → implementation → bitstream):
 -synth_design: Time (s): cpu = 00:03:28 ; elapsed = 00:03:45 . Memory (MB): peak = 2416.230 ; gain = 1892.363
