@@ -19,39 +19,38 @@ Communication with the host PC is via **UART**. Results are shown both:
    - `Matlab/coprocessorTesting.m` (Section 8)
 
 ## 1. Repository structure
-HLS/
-  core.cpp
-  core.hpp
-  testbench.cpp
-  golde_gen.py
-  golden_inputs.csv
-  golden_ref.csv
 
-Matlab/
-  coprocessorTesting.m
-  write2dev.m
-  command2dev.m
-
-RTL/
-  control_out.sv
-  coprocessor_top.sv
-  display_interface.sv
-  rx_control.sv
-  wide_mem.sv
-  data_sync.v
-  pulse_generator.sv
-  uart_basic.v
-  uart_basic_tick_gen.v
-  uart_rx.v
-  uart_tx.v
-  UART_master_const.xdc
-  ila_0/
-    ila_0.xci
-  clk_wiz_0/
-    clk_wiz_0.xci
-    
-LICENSE
-README.md
+├── HLS/                       # High-Level Synthesis source & verification
+│   ├── core.cpp               # Main hardware accelerator C++ source
+│   ├── core.hpp               # C++ header definitions
+│   ├── testbench.cpp          # C-simulation testbench
+│   ├── golde_gen.py           # Python script to generate reference data
+│   ├── golden_inputs.csv      # Input vectors for verification
+│   └── golden_ref.csv         # Expected output data for verification
+│
+├── Matlab/                    # Host-side verification & communication scripts
+│   ├── coprocessorTesting.m   # Main testing script
+│   ├── write2dev.m            # Function to write data to the FPGA
+│   └── command2dev.m          # Function to send control commands
+│
+├── RTL/                       # SystemVerilog/Verilog source files & constraints
+│   ├── coprocessor_top.sv     # Top-level module
+│   ├── control_out.sv         
+│   ├── rx_control.sv          
+│   ├── display_interface.sv   
+│   ├── wide_mem.sv            
+│   ├── data_sync.v            
+│   ├── pulse_generator.sv     
+│   ├── uart_basic.v           
+│   ├── uart_basic_tick_gen.v  
+│   ├── uart_rx.v              
+│   ├── uart_tx.v              
+│   ├── UART_master_const.xdc  # Constraints (Pinout/Timing)
+│   ├── ila_0/                 # Integrated Logic Analyzer IP
+│   └── clk_wiz_0/             # Clocking Wizard IP
+│
+├── LICENSE                    # License information
+└── README.md                  # Project documentation
 
 Tested with:
 - Board: Nexys4 DDR (Artix-7 XC7A100T)
