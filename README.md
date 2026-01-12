@@ -48,7 +48,6 @@ Communication with the host PC is via **UART**. Results are shown both:
 │   ├── UART_master_const.xdc  # Constraints (Pinout/Timing)
 │   ├── ila_0/                 # Integrated Logic Analyzer IP
 │   └── clk_wiz_0/             # Clocking Wizard IP
-│
 ├── LICENSE                    # License information
 └── README.md                  # Project documentation
 
